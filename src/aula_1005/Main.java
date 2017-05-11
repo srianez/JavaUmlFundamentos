@@ -3,7 +3,7 @@ package aula_1005;
 public class Main {
 
  public static void main(String[] args) {
-		ContaEspecial conta = new  ContaEspecial();
+		ContaEspecial conta = new ContaEspecial("silas", "endereço do silas","cpf do silas");
 		
 		conta.deposita(100);
 		
