@@ -36,7 +36,7 @@ public class Calc {
             System.out.println("2. Subtrair");
             System.out.println("3. Multiplicar");
             System.out.println("4. Dividir");
-            System.out.println("0. Nenhuma");
+            System.out.println("9. Nenhuma");
            
             opcao = input.nextInt();
            

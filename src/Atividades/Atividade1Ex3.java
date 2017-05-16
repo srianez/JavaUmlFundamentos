@@ -4,6 +4,7 @@ import javax.swing.JOptionPane;
 
 public class Atividade1Ex3 {
 
+
 	public static void main(String args[])  {
 		
 		double[] salarios;
@@ -14,7 +15,6 @@ public class Atividade1Ex3 {
 		
 		salarios = new double[qtdfunc]; //define o tamanho do array
 		
-		// 
 		for (int i = 0; i < qtdfunc; i++) {
 			
 			salarios[i] =  Double.parseDouble(JOptionPane.showInputDialog(null, "Informe o valor do " + (i+1) +" salário"));
