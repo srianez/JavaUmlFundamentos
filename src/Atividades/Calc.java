@@ -1,74 +1,71 @@
 package Atividades;
 
 import java.util.Scanner;
+import javax.swing.JOptionPane;
+
 
 public class Calc {
 	
-    /*Declaração dos métodos*/
-    public int som(int num1, int num2) {
+    public double somar(double num1, double num2) {
         return num1 + num2;
     }
     
-    public int sub(int num1, int num2) {
+    public double subtrair(double num1, double num2) {
         return num1 - num2;
     }
     
-    public int div(int num1, int num2) {
+    public double dividir(double num1, double num2) {
         return num1 / num2;
     }
     
-    public int mult(int num1, int num2) {
+    public double multiplicar(double num1, double num2) {
             return num1 * num2;
     }
     
-    // --------------- Metodo principal
     public static void main(String args[]) {
             
-    	    //criando um objeto c a apartir do metodo calc  
-            Calc c = new Calc();
+            Calc x = new Calc();
             
-            //declarando as varíaveis  
             int opcao = 5;
-            int num1;
-            int num2;
+            double num1;
+            double num2;
             
             Scanner input = new Scanner(System.in);
-            System.out.println("-Escolha uma opção-");
-            System.out.println("1. Soma");
-            System.out.println("2. Subtracao");
-            System.out.println("3. Multiplicacao");
-            System.out.println("4. Divisao");
-            System.out.println("0. Sair");
-            System.out.println("Operação: ");
-            
+            System.out.println("Escolha a operação desejada:");
+            System.out.println("1. Somar");
+            System.out.println("2. Subtrair");
+            System.out.println("3. Multiplicar");
+            System.out.println("4. Dividir");
+            System.out.println("0. Nenhuma");
+           
             opcao = input.nextInt();
            
             while (opcao != 0) {
                 Scanner input1 = new Scanner(System.in);
-                System.out.println("Qual o primeiro numero: ");
-                num1 = input1.nextInt();
-                System.out.println("Qual o segundo numero: ");
-                num2 = input1.nextInt();
+                System.out.println("Informe o primeiro número: ");
+                num1 = input1.nextDouble();
+                System.out.println("Informe o segundo número: ");
+                num2 = input1.nextDouble();
+                
                 if (opcao == 1) {
-                    int operacao = c.som(num1, num2);
-                    System.out.printf("\nO resultado da soma é: %d\n", operacao);
+                    double operacao = x.somar(num1, num2);
+                    System.out.printf("\nO resultado da soma é: %2f\n", operacao);
                     break;
                 } else if (opcao == 2) {
-                    int operacao = c.sub(num1, num2);
+                	double operacao = x.subtrair(num1, num2);
                     System.out.printf("\nO resultado da subtração é: %d\n", operacao);
                     break;
                 } else if (opcao == 3) {
-                    int operacao = c.mult(num1, num2);
+                	double operacao = x.multiplicar(num1, num2);
                     System.out.printf("\nO resultado da multiplicação é: %d\n", operacao);
                     break;
                 } else if (opcao == 4) {
-                    int operacao = c.div(num1, num2);
+                	double operacao = x.dividir(num1, num2);
                     System.out.printf("\nO resultado da divisão é: %d\n", operacao);
                     break;
                 } else {
-                    System.out.println("????");
                     break;
                 }
-            } // fim do while - usuario optou por sair
-        } // fim do metodo principal
+            }
+        } 
 }
