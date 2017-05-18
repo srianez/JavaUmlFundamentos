@@ -16,8 +16,8 @@ public class Main {
 		LocalDateTime inicio = LocalDateTime.now();
 		inicio = LocalDateTime.now();
 		
-		LinkedList<Integer> x = new LinkedList<>();
-		ArrayList<Integer> j = new ArrayList<>();
+		LinkedList<Integer> x = new LinkedList<>(); //cria linkedlist (esses arrays nao precisam de tamanho pre definido
+		ArrayList<Integer> j = new ArrayList<>();   //cria arraylist
 		
 		for (int i = 0; i <= 10000; i++) {
 			x.add(i);
@@ -25,6 +25,8 @@ public class Main {
 	
 		LocalDateTime fim = LocalDateTime.now();
 		fim = LocalDateTime.now();
+		
+		//quantos milisegundos entre inicio e fim
 		System.out.println("Tempo inserção LinkedList: "+ ChronoUnit.MILLIS.between(inicio, fim));
 		
 		
