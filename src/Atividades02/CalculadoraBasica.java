@@ -1,4 +1,4 @@
-package Atividades;
+package Atividades02;
 
 public interface CalculadoraBasica {
 	
