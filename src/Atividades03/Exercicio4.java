@@ -1,53 +1,50 @@
 package Atividades03;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Collections;
 import java.util.Iterator;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.stream.IntStream;
+import java.util.Random;
+
 
 public class Exercicio4 {
-	/**
-	 * @param args
-	 */
+
 	public static void main(String[] args) {
 
-		String texto;
+		ArrayList<Pessoa> listaPessoa = new ArrayList<Pessoa>();
 
-		try {
-			boolean newArquivo = false;
-			File f = new File("mensagemCodificada.txt");
+		listaPessoa.add(new Pessoa("Silas", 30, "M", "Techne"));
+		listaPessoa.add(new Pessoa("Pedro", 68, "M", "Fiap"));
+		listaPessoa.add(new Pessoa("Amaury", 55, "M", "Techne"));
+		listaPessoa.add(new Pessoa("Gilberto", 12, "M", "Techne"));
+		listaPessoa.add(new Pessoa("Maria", 21, "F", "IBM"));
 
-			newArquivo = f.createNewFile();
+		//Sorteando a lista e removendo uma pessoa aleatória
+		Random sorteio = new Random();
 
-			FileWriter fw = new FileWriter(f);
+		for (int contagem = 1; contagem <= listaPessoa.size(); contagem++) {
+			Pessoa i = listaPessoa.get(sorteio.nextInt(listaPessoa.size()));
 
-			Scanner input1 = new Scanner(System.in);
-			System.out.println("Informe o texto: ");
-			texto = input1.nextLine();
-
-			StringBuilder tmp = new StringBuilder();
-			
-			for (char c : texto.toCharArray()) {
-				tmp.append((int) c + 1);
-				
-			}
-
-			BigInteger mInt = new BigInteger(tmp.toString());
-			
-			System.out.println(mInt);
-			
-			fw.write(mInt.toString());
-			fw.flush();
-			fw.close();
-			input1.close();
-
-		} catch (IOException e) {
+			listaPessoa.remove(i);
+			break;
 		}
+		
+		//Ordenando a lista baseada no nome
+		Iterator<Pessoa> iterador = listaPessoa.iterator();
+	
+		Comparador comparador = new Comparador();
+		Collections.sort(listaPessoa, comparador);
+		iterador = listaPessoa.iterator();
+
+		System.out.println("Lista ordenada pelo Nome e removendo um elemento aleatório");
+		while (iterador.hasNext()) {
+			Pessoa pessoa = iterador.next();
+			System.out.println("Nome: " + pessoa.getNome());
+		}
+		
+		//orderna a lista de forma invertida
+		Collections.reverse(listaPessoa);
+		
+		System.out.println("Ordenação inversa :" + listaPessoa.toString());
+		
 	}
 }
