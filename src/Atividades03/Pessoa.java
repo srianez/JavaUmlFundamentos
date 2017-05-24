@@ -48,5 +48,10 @@ public class Pessoa {
 		this.empresa = empresa;
 	}
 
-
+    @Override //override para retornar a string nome e não o objeto
+    public String toString() { 
+        return this.nome; 
+    } 
+		
+    
 }

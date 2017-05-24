@@ -1,10 +1,8 @@
 package Atividades03;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Random;
 
 
@@ -43,9 +41,10 @@ public class Exercicio3 {
 			System.out.println("Nome: " + pessoa.getNome());
 		}
 		
+		//orderna a lista de forma invertida
 		Collections.reverse(listaPessoa);
 		
-		System.out.println("Ordenação inversa :" + listaPessoa);
+		System.out.println("Ordenação inversa :" + listaPessoa.toString());
 		
 	}
 }
