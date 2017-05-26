@@ -3,6 +3,21 @@ package Atividades04;
 public class Main {
 
 	public static void main(String[] args) throws InterruptedException {
+		
+		Cores[] cor = Cores.values();
+		Cores c;
+		
+		for (int i = 0; i < cor.length; i++) {
+			c = cor[i]; 
+			System.out.println(c.getNome()+ " " + c.getCodigo());		
+		}
+		
+		System.out.println("======================");
+		System.out.println(Cores.BRANCO.getNome() +" "+ Cores.BRANCO.getCodigo());
+		System.out.println("======================");
+		
+		System.out.println("========= PROCESSAMENTO DAS THREADS =========");
+	
 
 		Thread1 x = new Thread1();
 		Thread2 y = new Thread2();
